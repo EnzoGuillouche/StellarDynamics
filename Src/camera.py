@@ -51,8 +51,6 @@ def on_mouse_click(event):
     if clicked_planet_index != -1:
         planet_clicked = list(Elements.planet.planets_data.keys())[clicked_planet_index]
         print(Elements.planet.planets_data[planet_clicked]["description"])
-    else:
-        print("No planet clicked")
         
 def cameraInit(sun):
     scene.camera.pos = sun.sphere.pos + vector(0, 0, sun.sphere.radius*3)

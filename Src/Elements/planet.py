@@ -3,8 +3,9 @@ import random
 import json
 
 # ---------------------- Planet data from JSON ---------------------
-with open('data.json', 'r') as file:
-    planets_data = json.load(file)
+with open('data.json', 'r', encoding='utf-8') as file:
+    content = file.read()
+    planets_data = json.loads(content)
 
 NUM_PLANETS = len(planets_data)
 
