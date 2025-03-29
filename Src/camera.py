@@ -49,7 +49,8 @@ def on_mouse_click(event):
 
 
     if clicked_planet_index != -1:
-        print(f"Clicked on {Elements.planet.planets[clicked_planet_index].name}")
+        planet_clicked = list(Elements.planet.planets_data.keys())[clicked_planet_index]
+        print(Elements.planet.planets_data[planet_clicked]["description"])
     else:
         print("No planet clicked")
         

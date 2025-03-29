@@ -1,32 +1,12 @@
 from vpython import *
 import random
+import json
 
-NUM_PLANETS = 8
+# ---------------------- Planet data from JSON ---------------------
+with open('data.json', 'r') as file:
+    planets_data = json.load(file)
 
-planet_names = {
-    0: "Sun",
-    1: "Mercury",
-    2: "Venus",
-    3: "Earth",
-    4: "Mars",
-    5: "Jupiter",
-    6: "Saturn",
-    7: "Uranus",
-    8: "Neptune",
-}
-
-# ---------------------- Planet colors ---------------------
-planet_colors = {
-    0: vector(255/255, 255/255, 0/255),
-    1: vector(205/255, 133/255, 63/255),
-    2: vector(218/255, 165/255, 32/255),
-    3: vector(127/255, 255/255, 212/255),
-    4: vector(255/255, 59/255, 0/255),
-    5: vector(238/255, 232/255, 170/255),
-    6: vector(245/255, 245/255, 220/255),
-    7: vector(0/255, 191/255, 255/255),
-    8: vector(65/255, 105/255, 225/255)
-}
+NUM_PLANETS = len(planets_data)
 
 planet_radius = {
     0: 250,
@@ -52,25 +32,13 @@ planet_orbital_radius = { # in astronomical unit
     8: 30.0
 }
 
-planet_mass = {
-    0: 1000.0,
-    1: 0.000055,
-    2: 0.000815,
-    3: 0.000003,
-    4: 0.000107,
-    5: 0.000954,
-    6: 0.000285,
-    7: 0.000047,
-    8: 0.000055
-}
-
 planets = []
 
 class Planet:
   def __init__(self, index, pos, GRAVITY_CONSTANT):
     self.index = index
-    self.name = planet_names[self.index]
-    self.mass = planet_mass[self.index]
+    self.name = list(planets_data.keys())[self.index]
+    self.mass = planets_data[self.name]["mass"]
     self.has_rings = self.index == 6
     self.sphere = sphere()
     self.velocity = vector(0, 0, 0)
@@ -80,7 +48,7 @@ class Planet:
         self.sphere = sphere(
             pos=pos, 
             radius=planet_radius[self.index], 
-            color=planet_colors[self.index],
+            color=vector(planets_data[self.name]["color"][0] / 255, planets_data[self.name]["color"][1] / 255, planets_data[self.name]["color"][2] / 255),
             shininess=True
         )
     else:
@@ -99,16 +67,16 @@ class Planet:
         self.sphere = sphere(
             pos=initial_position, 
             radius=planets[0].sphere.radius * (planet_radius[self.index]/2), 
-            color=planet_colors[self.index],
+            color=vector(planets_data[self.name]["color"][0] / 255, planets_data[self.name]["color"][1] / 255, planets_data[self.name]["color"][2] / 255),
         )
-        self.mass = planets[0].mass * planet_mass[self.index]
+        self.mass = planets_data["Sun"]["mass"] * planets_data[self.name]["mass"]
         self.velocity = initial_velocity
 
     planets.append(self)
 
 # ---------------------- Create Orbiting Planets ---------------------
 def createPlanets(GRAVITY_CONSTANT):
-    for i in range(NUM_PLANETS + 1): # Including the Sun creation
+    for i in range(NUM_PLANETS): # Including the Sun creation
         e = Planet(i, vector(0, 0, 0), GRAVITY_CONSTANT)
         print("Created", e.name)
         

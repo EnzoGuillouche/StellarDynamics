@@ -1,4 +1,6 @@
 from vpython import *
+import os
+
 import simulation
 import Elements.planet
 import camera
@@ -16,5 +18,6 @@ if __name__ == "__main__":
     scene.height = 800
 
     # ---------------------- Simulation Loop ---------------------
+    os.system('cls' if os.name == 'nt' else 'clear')
     simulation.loop()
         

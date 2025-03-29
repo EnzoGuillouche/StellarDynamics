@@ -1,0 +1,74 @@
+{
+  "Sun": {
+    "type": "Planet",
+    "color": [255, 255, 0],
+    "description": "The Sun is the star at the center of the Solar System, a nearly perfect sphere of hot plasma that provides the necessary energy for life on Earth.",
+    "mass": 1000.0,
+    "natural_satellites": "None",
+    "particular_traits": ["Emits solar radiation", "Composed mainly of hydrogen and helium", "Source of the solar wind"]
+  },
+  "Mercury": {
+    "type": "Planet",
+    "color": [205, 133, 63],
+    "description": "The smallest and innermost planet in the Solar System, Mercury has a rocky surface with extreme temperature variations.",
+    "mass": 0.000055,
+    "natural_satellites": "None",
+    "particular_traits": ["Closest planet to the Sun", "No atmosphere to retain heat", "Has a heavily cratered surface"]
+  },
+  "Venus": {
+    "type": "Planet",
+    "color": [218, 165, 32],
+    "description": "The second planet from the Sun, Venus has a thick atmosphere composed mainly of carbon dioxide, creating a runaway greenhouse effect.",
+    "mass": 0.000815,
+    "natural_satellites": "None",
+    "particular_traits": ["Hottest planet in the Solar System", "Rotates in the opposite direction of most planets", "Has thick clouds of sulfuric acid"]
+  },
+  "Earth": {
+    "type": "Planet",
+    "color": [127, 255, 212],
+    "description": "The third planet from the Sun, Earth is the only known celestial body to support life and has vast amounts of liquid water.",
+    "mass": 0.000003,
+    "natural_satellites": ["Moon"],
+    "particular_traits": ["Only known planet with life", "Has plate tectonics", "Atmosphere rich in oxygen and nitrogen"]
+  },
+  "Mars": {
+    "type": "Planet",
+    "color": [255, 59, 0],
+    "description": "The fourth planet from the Sun, Mars is a cold desert world with the largest volcano and canyon in the Solar System.",
+    "mass": 0.000107,
+    "natural_satellites": ["Phobos", "Deimos"],
+    "particular_traits": ["Known as the Red Planet", "Has polar ice caps", "Potential for past liquid water"]
+  },
+  "Jupiter": {
+    "type": "Planet",
+    "color": [238, 232, 170],
+    "description": "The largest planet in the Solar System, Jupiter is a gas giant with a massive magnetic field and dozens of moons.",
+    "mass": 0.000954,
+    "natural_satellites": ["Ganymede", "Callisto", "Io", "Europa", "and 76 others"],
+    "particular_traits": ["Has the Great Red Spot", "Mostly hydrogen and helium", "Strongest magnetic field of all planets"]
+  },
+  "Saturn": {
+    "type": "Planet",
+    "color": [245, 245, 220],
+    "description": "The sixth planet from the Sun, Saturn is known for its prominent ring system and its numerous moons.",
+    "mass": 0.000285,
+    "natural_satellites": ["Titan", "Enceladus", "Mimas", "Iapetus", "and 79 others"],
+    "particular_traits": ["Has a large ring system", "Low density", "Strong winds in its atmosphere"]
+  },
+  "Uranus": {
+    "type": "Planet",
+    "color": [0, 191, 255],
+    "description": "The seventh planet from the Sun, Uranus is an ice giant with a unique tilt that causes extreme seasonal variations.",
+    "mass": 0.000047,
+    "natural_satellites": ["Titania", "Oberon", "Umbriel", "Ariel", "and 23 others"],
+    "particular_traits": ["Rotates on its side", "Has a faint ring system", "Mainly composed of water, ammonia, and methane"]
+  },
+  "Neptune": {
+    "type": "Planet",
+    "description": "The eighth and farthest planet from the Sun, Neptune is a deep blue ice giant with the strongest winds in the Solar System.",
+    "color": [65, 105, 225],
+    "mass": 0.000055,
+    "natural_satellites": ["Triton", "Proteus", "Nereid", "and 11 others"],
+    "particular_traits": ["Coldest planet in the Solar System", "Has the fastest planetary winds", "Deep blue color due to methane in its atmosphere"]
+  }
+}
