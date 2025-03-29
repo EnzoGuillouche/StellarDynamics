@@ -15,12 +15,13 @@ if (-not (Command-Exists "python")) {
 }
 
 Write-Output "Checking VPython installation..."
-if (-not (python -c "import vpython" 2>$null)) {
-    Write-Output "VPython is not installed. Installing VPython..."
-    pip install vpython
-} else {
+$vpythonInstalled = python -c "import vpython" 2>$null
+if ($?) {
     $vpythonVersion = pip show vpython | Select-String "Version" | ForEach-Object { ($_ -split " ")[1] }
     Write-Output "VPython is already installed: $vpythonVersion"
+} else {
+    Write-Output "VPython is not installed. Installing VPython..."
+    pip install vpython
 }
 
 Write-Output "Starting simulation..."
