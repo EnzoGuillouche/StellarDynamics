@@ -4,9 +4,9 @@ from vpython import *
 scene.camera.pos = vector(50, 200, 150)
 scene.camera.axis = vector(0, -1, -2)
 
-def cameraInit(pos):
-    scene.camera.pos = pos + vector(0, 0, 750)
-    scene.camera.axis = pos - scene.camera.pos
+def cameraInit(sun):
+    scene.camera.pos = sun.sphere.pos + vector(0, 0, sun.sphere.radius*3)
+    scene.camera.axis = sun.sphere.pos - scene.camera.pos
 
 camera_speed = 50
 camera_velocity = vector(0, 0, 0)
