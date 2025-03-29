@@ -1,21 +1,27 @@
-# StellarDynamics
+# StellarDynamics 🌌🚀
 
-**StellarDynamics** is a simulation of the solar system using VPython. It visualizes how planets orbit around the Sun, incorporating factors such as their mass, velocity, and gravitational forces. This project allows users to explore the mechanics of our solar system in an interactive 3D environment.
+**StellarDynamics** is an interactive 3D simulation of the solar system, built with the power of VPython. It visualizes the majestic orbits of planets around the Sun, bringing celestial mechanics to life by considering factors such as mass, velocity, and gravitational forces. This project invites you to explore the wonders of our solar system in an immersive and educational way.
 
-## Features
+## Features ✨
 
-- **Planetary Orbits**: Realistic simulation of planetary orbits around the Sun, based on physics principles like gravitational attraction and velocity.
-- **Camera Navigation**: A camera system to navigate through the simulation and explore the solar system from different angles and perspectives.
-- **Interactive Simulation**: Ability to interact with the simulation, view planetary details, and observe the movement of celestial bodies.
+- **Realistic Planetary Orbits**: Watch as planets orbit the Sun based on realistic physics, including gravitational attraction and orbital velocity. Understand the beauty of orbital dynamics firsthand.
+  
+- **Camera Navigation**: Take control of your view with a camera system that allows you to zoom in on planets, move across space, and view the solar system from different perspectives. Feel like you're truly navigating through the stars!
 
-## Requirements
+- **Interactive Exploration**: Change planetary properties like mass or velocity and see how these changes affect their orbits. Observe the complex dance of celestial bodies as you interact with the simulation.
 
-- Python 3.12.4 or more recent
-- VPython 7.6.5 or more recent (for 3D visualization and simulation)
+- **Web Tab**: The simulation will launch in your web browser, allowing you to explore and experiment with ease directly from a dynamic interface.
 
-## Installation
+---
 
-1. Clone the repository:
+## Requirements ⚙️
+
+- Python 3.12.4 or higher
+- VPython 7.6.5 or higher (for 3D visualization and simulation)
+
+## Installation 🛠️
+
+1. **Clone the repository**:
 
    ```bash
    git clone https://github.com/EnzoGuillouche/StellarDynamics.git
@@ -29,18 +35,52 @@
 
 3. Run the simulation:
 
+    For *Linux/macOS*:
+
     ```bash
-    .\launchSimulation.sh
+    ./launchSimulation.sh
     ```
 
-## Usage
+    For *Windows* (using PowerShell):
 
-Upon running the simulation, you will see the solar system with the Sun at the center and the planets orbiting around it.
+    ```bash
+    .\launchSimulation.ps1
+    ```
 
-Use the camera controls to navigate through the simulation and explore the system.
+4. Experience the simulation:
 
-You can modify the parameters of planets (such as mass, velocity) in the code to observe how these changes affect their orbits.
+Once the simulation is running, a web tab will open in your default browser, displaying the solar system simulation in 3D. From here, you can start navigating and exploring the planets, their orbits, and more.
 
-## Contributing
+## Usage 🌍
 
-Feel free to fork the repository, submit issues, or create pull requests if you'd like to contribute to the project!
+Navigating the Simulation:
+
+- Zoom: Use the scroll wheel to zoom in and out.
+
+- Pan: Click and drag to move the camera across the scene.
+
+- Orbit: Hold the right mouse button and drag to orbit around a planet.
+
+- Jump to a Planet: Click on any planet to focus the camera on it.
+
+Modifying Planet Properties:
+
+Open the code file and adjust parameters such as mass, velocity, or orbital distance to see how these changes affect the orbital paths.
+
+Watch how the orbits change dynamically as the physical laws take effect.
+
+## Contributing 🤝
+
+This project is open-source and welcomes contributions from developers, scientists, and enthusiasts alike!
+
+**Bug Reports**: Found an issue? Open an issue on GitHub and let us know.
+
+**Enhancements**: Have an idea for a new feature or improvement? Open a pull request with your suggested changes.
+
+**Learning & Collaboration**: Whether you're learning about orbital mechanics or simulation development, feel free to join the discussion. All contributions are appreciated!
+
+## Acknowledgements 🏆
+
+Thanks to VPython for providing the tools to bring this simulation to life, and to all contributors who help make this project better!
+
+Let’s explore the stars together! ✨
