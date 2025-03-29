@@ -29,13 +29,9 @@
    git clone https://github.com/EnzoGuillouche/StellarDynamics.git
    ```
 
-2. Install the required dependencies:
+2. Run the simulation:
 
-    ```bash
-    pip install vpython
-    ```
-
-3. Run the simulation:
+    The build files are installing necessary dependencies automatically if missing.
 
     For *Linux/macOS*:
 
@@ -49,7 +45,7 @@
     .\launchSimulation.ps1
     ```
 
-4. Experience the simulation:
+3. Experience the simulation:
 
 Once the simulation is running, a web tab will open in your default browser, displaying the solar system simulation in 3D. From here, you can start navigating and exploring the planets, their orbits, and more.
 
