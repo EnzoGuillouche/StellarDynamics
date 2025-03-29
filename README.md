@@ -2,6 +2,8 @@
 
 **StellarDynamics** is an interactive 3D simulation of the solar system, built with the power of VPython. It visualizes the majestic orbits of planets around the Sun, bringing celestial mechanics to life by considering factors such as mass, velocity, and gravitational forces. This project invites you to explore the wonders of our solar system in an immersive and educational way.
 
+![image](https://github.com/user-attachments/assets/f32c9184-b5e2-4662-ae06-56c68ffbd113)
+
 ## Features ✨
 
 - **Realistic Planetary Orbits**: Watch as planets orbit the Sun based on realistic physics, including gravitational attraction and orbital velocity. Understand the beauty of orbital dynamics firsthand.
