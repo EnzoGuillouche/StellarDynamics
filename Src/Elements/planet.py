@@ -68,9 +68,10 @@ planets = []
 
 class Planet:
   def __init__(self, index, pos, GRAVITY_CONSTANT):
-    self.name = planet_names[index]
-    self.mass = planet_mass[index]
-    self.has_rings = index == 6
+    self.index = index
+    self.name = planet_names[self.index]
+    self.mass = planet_mass[self.index]
+    self.has_rings = self.index == 6
     self.sphere = sphere()
     self.velocity = vector(0, 0, 0)
     
@@ -78,13 +79,13 @@ class Planet:
         # Create star
         self.sphere = sphere(
             pos=pos, 
-            radius=planet_radius[index], 
-            color=planet_colors[index],
+            radius=planet_radius[self.index], 
+            color=planet_colors[self.index],
             shininess=True
         )
     else:
         # Random orbital radius and angle
-        orbit_radius = planets[0].sphere.radius + planets[0].sphere.radius * planet_orbital_radius[index]
+        orbit_radius = planets[0].sphere.radius + planets[0].sphere.radius * planet_orbital_radius[self.index]
         angle = random.uniform(0, 2 * pi)
 
         # Initial position in the XY plane
@@ -97,10 +98,10 @@ class Planet:
         # Create planet
         self.sphere = sphere(
             pos=initial_position, 
-            radius=planets[0].sphere.radius * (planet_radius[index]/2), 
-            color=planet_colors[index],
+            radius=planets[0].sphere.radius * (planet_radius[self.index]/2), 
+            color=planet_colors[self.index],
         )
-        self.mass = planets[0].mass * planet_mass[index]
+        self.mass = planets[0].mass * planet_mass[self.index]
         self.velocity = initial_velocity
 
     planets.append(self)
