@@ -57,13 +57,13 @@ Once the simulation is running, a web tab will open in your default browser, dis
 
 **Navigating the Simulation**:
 
-- _Zoom_: Use the scroll wheel to zoom in and out.
+- *Zoom*: Use the scroll wheel to zoom in and out.
 
-- _Pan_: Click and drag to move the camera across the scene.
+- *Pan*: Click and drag to move the camera across the scene.
 
-- _Orbit_: Hold the right mouse button and drag to orbit around a planet.
+- *Orbit*: Hold the right mouse button and drag to orbit around a planet.
 
-- _Jump to a Planet_: Click on any planet to focus the camera on it.
+- *Jump to a Planet*: Click on any planet to focus the camera on it.
 
 **Modifying Planet Properties**:
 
