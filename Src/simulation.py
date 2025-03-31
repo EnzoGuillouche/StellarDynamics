@@ -1,4 +1,5 @@
 from vpython import *
+
 import camera
 import Elements.planet
 import Elements.ring
@@ -18,7 +19,11 @@ def loop():
 
         # Apply acceleration and smooth stop
         camera_velocity = camera.updateCameraVelocity(move_direction)
-        scene.camera.pos += camera_velocity
+        
+        if camera.camera_has_moved == False:
+            camera.focusCamera(camera.planet_focused)
+        else:
+            scene.camera.pos += camera_velocity
 
         # Update planetary motion
         for planet in Elements.planet.planets:

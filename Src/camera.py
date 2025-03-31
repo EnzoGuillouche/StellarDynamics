@@ -1,10 +1,18 @@
 from vpython import *
+import os
+
 import Elements.planet
 
-camera_speed = 50
+camera_speed = 25
 camera_velocity = vector(0, 0, 0)
 acceleration_factor = 0.60
 deceleration_factor = 0.9
+
+def focusCamera(planet):
+    global camera_has_moved
+    scene.camera.pos = planet.sphere.pos + vector(0, 0, planet.sphere.radius*5)
+    scene.camera.axis = planet.sphere.pos - scene.camera.pos
+    camera_has_moved = False
 
 # ---------------------- Camera Controls ---------------------
 keys_pressed = {"w": False, "s": False, "a": False, "d": False, "q": False, "e": False, }
@@ -47,20 +55,28 @@ def on_mouse_click(event):
                 closest_distance = projection_length
                 clicked_planet_index = i  # Store the correct index
 
-
+    global planet_focused
     if clicked_planet_index != -1:
+        os.system('cls' if os.name == 'nt' else 'clear')
         planet_clicked = list(Elements.planet.planets_data.keys())[clicked_planet_index]
         print(Elements.planet.planets_data[planet_clicked]["description"])
         
+        planet_focused = Elements.planet.planets[clicked_planet_index]
+        focusCamera(planet_focused)
+
+
 def cameraInit(sun):
-    scene.camera.pos = sun.sphere.pos + vector(0, 0, sun.sphere.radius*3)
-    scene.camera.axis = sun.sphere.pos - scene.camera.pos
+    focusCamera(sun)
     
     scene.bind('keydown', key_down)
     scene.bind('keyup', key_up)
     scene.bind('click', on_mouse_click)
+    
+    global planet_focused
+    planet_focused = sun
 
 def cameraMovement():
+    global camera_has_moved
     # Smooth camera movement
     move_direction = vector(0, 0, 0)
     if keys_pressed["w"]: move_direction.z -= camera_speed
@@ -69,6 +85,9 @@ def cameraMovement():
     if keys_pressed["d"]: move_direction.x += camera_speed
     if keys_pressed["q"]: move_direction.y -= camera_speed
     if keys_pressed["e"]: move_direction.y += camera_speed
+    
+    if move_direction != vector(0, 0, 0):
+        camera_has_moved = True
     
     return move_direction
 
