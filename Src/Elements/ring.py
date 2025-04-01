@@ -21,7 +21,7 @@ class Ring:
         angle = random.uniform(0, 2 * pi)
 
         # Initial position in the XY plane
-        initial_position = vector(orbit_radius * cos(angle), orbit_radius * sin(angle), 0)
+        initial_position = vector(orbit_radius * cos(angle), 0, orbit_radius * sin(angle))
 
         # Calculate velocity for a circular orbit
         orbital_speed = sqrt(GRAVITY_CONSTANT * planet.mass / orbit_radius)
