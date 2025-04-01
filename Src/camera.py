@@ -67,13 +67,15 @@ def on_mouse_click(event):
 
 def cameraInit(sun):
     focusCamera(sun)
+    global planet_focused
+    planet_focused = sun
     
     scene.bind('keydown', key_down)
     scene.bind('keyup', key_up)
     scene.bind('click', on_mouse_click)
     
-    global planet_focused
-    planet_focused = sun
+    global camera_has_moved
+    camera_has_moved = True
 
 def cameraMovement():
     global camera_has_moved

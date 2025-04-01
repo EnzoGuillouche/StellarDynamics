@@ -1,12 +1,13 @@
 from vpython import *
 import random
 
-NUM_RINGS = 500
+NUM_RINGS = 1000
 
 rings_color = [ # Predefined rings color options
     vector(205/255, 133/255, 63/255),
     vector(218/255, 165/255, 32/255),
-    vector(238/255, 232/255, 170/255)
+    vector(238/255, 232/255, 170/255),
+    vector(0/255, 191/255, 255/255)
 ]
 
 rings = []
@@ -20,7 +21,7 @@ class Ring:
         angle = random.uniform(0, 2 * pi)
 
         # Initial position in the XY plane
-        initial_position = vector(orbit_radius * cos(angle), 0, orbit_radius * sin(angle))
+        initial_position = vector(orbit_radius * cos(angle), orbit_radius * sin(angle), 0)
 
         # Calculate velocity for a circular orbit
         orbital_speed = sqrt(GRAVITY_CONSTANT * planet.mass / orbit_radius)
@@ -34,10 +35,8 @@ class Ring:
             radius=planet.sphere.radius * 0.02, 
             color=ring_color
         )
-        self.mass = planet.mass
+        self.mass = planet.mass * 0.02
         self.velocity = initial_velocity
-        self.orbit_radius = orbit_radius
-        self.angle = angle
 
         rings.append(self)
 
