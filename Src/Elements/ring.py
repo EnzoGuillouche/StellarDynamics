@@ -1,7 +1,7 @@
 from vpython import *
 import random
 
-NUM_RINGS = 50
+NUM_RINGS = 500
 
 rings_color = [ # Predefined rings color options
     vector(205/255, 133/255, 63/255),
@@ -31,10 +31,8 @@ class Ring:
         # Create ring
         self.sphere = sphere(
             pos=planet.sphere.pos + initial_position, 
-            radius=planet.sphere.radius * 0.005, 
-            color=ring_color,
-            make_trail=True,
-            retain=200
+            radius=planet.sphere.radius * 0.02, 
+            color=ring_color
         )
         self.mass = planet.mass
         self.velocity = initial_velocity
